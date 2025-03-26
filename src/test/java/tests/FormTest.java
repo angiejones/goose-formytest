@@ -5,6 +5,8 @@ import pages.FormPage;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import static org.testng.Assert.assertEquals;
+
 public class FormTest extends BaseTest {
 
     @Test
@@ -25,5 +27,6 @@ public class FormTest extends BaseTest {
             currentDate
         );
         formPage.submitForm();
+        assertEquals(driver.getCurrentUrl(), "https://formy-project.herokuapp.com/thanks");
     }
 }
